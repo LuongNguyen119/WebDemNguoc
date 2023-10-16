@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Tết Nguyên Đán 2024 </title>
+<link rel="stylesheet" href="text.css">
+<!-- <link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico" /> -->
+<link rel="shortcut icon" href="icon.png" />
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<!-- <div class="myblue" style="text-align:center; font-size: 21px; padding-top: -10px;"><strong>Hôm nay</strong>: <span style="color:#ffd300;">Thứ Ba, 14/2/2023</span> (Dương lịch) | <span style="color:#ffd300;">24/1/2023</span> (Âm lịch)</div> -->
+<div class="myblue" style="text-align:center; font-size: 21px; padding-top: -10px;"><strong>Sự Kiện Đã Diễn Ra</strong>: <span style="color:#00ddff;">Trung Thu 2023</span> <br> <span style="color:#00ff6a;"><span style="font-size: 30px">Sự Kiện Tiếp Theo</span></div>
+<br>
+<h2><span><strong>ĐẾM NGƯỢC NOEN 2023</strong><br><span style="color:#03cae9; font-size: 22px;"> <!--Ngày Thi 2: <span style="color:#f2f208;">3 Tháng 6 Năm 2023</span>.--></span></br></h2>
+<h4><span>Còn Lại ...</span></h4>
+<div class="countdown">
+<div id="day">Chúc</div>
+<div id="hour">Mừng</div>
+<div id="minute">Năm</div>
+<div id="second">Mới</div>
+</div>
+<div style="font-size: 21px; color:#17ff32; width: 100%; text-align:center; padding-bottom: -10px;"><i class="fas fa-hourglass-end"></i><br><strong>Ngày diễn ra</strong>:
+    <script>
+    var today = new Date("Dec 25, 2023");
+    var weekday = new Array(7);
+      weekday[0] = "Chủ Nhật";
+      weekday[1] = "Thứ Hai";
+      weekday[2] = "Thứ Ba";
+      weekday[3] = "Thứ Tư";
+      weekday[4] = "Thứ Năm";
+      weekday[5] = "Thứ Sáu";
+      weekday[6] = "Thứ Bảy";
+    var wd = weekday[today.getDay()];
+    var dd = String(today.getDate()).padStart(1, '0');
+    var mm = String(today.getMonth() + 1).padStart(1, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = '<span style="color:#032de9; font-size: 21px;">' + wd + ', ' + dd + '/' + mm + '/' + yyyy + '</span>';
+    document.write(today);
+    </script>
+    (Dương Lịch)
+    
+    <span style="color:#032de9; font-size: 21px;"> 1/1/2024</span> (Âm Lịch)<span style="font-size: 17px;"><strong><br>Múi giờ</strong>: Việt Nam/Hà Nội</span>
+    </div>
+
+<div id="dh"></div>
+ <!--<h5>KÌ THI ĐGNL (<strong><span style="color: rgb(36, 37, 36);">H</span><span style="color: rgb(28, 129, 12);">S</span><span style="color: rgb(255, 0, 0);">A</span></strong>) VNU HÀ NỘI<br><span style="color:#14f208; font-size: 20px;">ĐẠI HỌC QUỐC GIA HÀ NỘI</span></br><br><span style="color:#fbff00; font-size: 20px;">"Tốc độ thành công của bản thân nhất định phải nhanh hơn tốc độ già đi của cha mẹ."</span></br></h5> -->
+<div id="info">
+<a href="https://www.facebook.com/100035200653001" class="btn btn-outline-warning btn-sm" target="_blank">About Me</a>
+</div>
+</div>
+<script type="text/javascript">
+    var countDate = new Date('Dec 25, 2023 00:00:00').getTime();
+    //var countDate = new Date('Feb 10, 2024 00:00:00').getTime();
+
+    function newYear() {
+        var now = new Date().getTime();
+        gap = countDate - now;
+
+        var second = 1000;
+        var minute = second * 60;
+        var hour = minute * 60;
+        var day = hour * 24;
+
+        var d = Math.floor(gap / (day));
+        var h = Math.floor((gap % (day)) / (hour));
+        var m = Math.floor((gap % (hour)) / (minute));
+        var s = Math.floor((gap % (minute)) / (second));
+
+        document.getElementById('day').innerText = d;
+        document.getElementById('hour').innerText = h;
+        document.getElementById('minute').innerText = m;
+        document.getElementById('second').innerText = s;
+    }
+    setInterval(function () {
+        newYear();
+    }, 1000)
+    </script>
+
+    <div style="position: absolute; left: 0; top: 650px; left: 586px; background-color: #333; opacity: 0.9; width: 100px; padding: 2px; border-radius: 5px; z-index: 998;"><div style="color: #ff8f10; margin: 0 auto; text-align:center;" id="dongho" onload="showTime()"></div></div>	
+	
+	<script id="dh">
+		function showTime(){
+			var today = new Date().toLocaleString("en-US", {timeZone: "Asia/Ho_Chi_Minh"});
+			today = new Date(today);
+			var h = today.getHours(); // 0 - 23
+			var m = today.getMinutes(); // 0 - 59
+			var s = today.getSeconds(); // 0 - 59
+			var session = "AM";
+			
+			if(h == 0){
+				h = 12;
+			}
+			
+			if(h > 12){
+				h = h - 12;
+				session = "PM";
+			}
+			
+			h = (h < 10) ? "0" + h : h;
+			m = (m < 10) ? "0" + m : m;
+			s = (s < 10) ? "0" + s : s;
+			
+			var time = "<span class='myblue'>Giờ Hiện Tại"+"<i class='myblue far fa-clock'></i><br>" + h + ":" + m + ":" + s + " " + session + "<br><span class='myblue'>(Việt Nam)</span>";
+			document.getElementById("dongho").innerText = time;
+			document.getElementById("dongho").innerHTML = time;
+			
+			setTimeout(showTime, 1000);
+			
+		}
+		showTime();
+		document.getElementById('dh').innerHTML = "";
+	</script>
+    <div class="container2">
+    <h3><span>Copyright © 2023 by LuongNguyen</h3>
+</div>
+
+<div class='music-box'>
+<a title='Play music'><i class='fa fa-music'></i></a>
+</button>
+<div class='music-holder'>
+<iframe allow='autoplay; encrypted-media' allowfullscreen='' frameborder='0' height='315' src='https://www.youtube.com/embed/Tcxh7sZphIo?controls=0&autoplay=1' width='560'></iframe>
+</div>
+</div>
+<script type='text/javascript'>
+        if ($(".music-box").length) {
+            var musicBtn = $(".music-box-toggle-btn")
+                musicBox = $(".music-holder");
+            musicBtn.on("click", function () {
+                musicBox.toggleClass("toggle-music-box");
+                return false;
+            })
+        }
+    </script>
+</body>
+</html>
